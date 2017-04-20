@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 进度条 -->
+<progress value="50" max="100"></progress><br/>
+<progress></progress><br/>
+<!-- 度量器 -->
+<meter min="0" max="10" low="3" high="7" optimum="9" value="0"></meter>
+<meter min="0" max="10" low="3" high="7" optimum="9" value="1"></meter>
+<meter min="0" max="10" low="3" high="7" optimum="9" value="4"></meter>
+<meter min="0" max="10" low="3" high="7" optimum="9" value="7"></meter>
+<meter min="0" max="10" low="3" high="7" optimum="9" value="10"></meter><br/>
+<!-- 可折叠内容 -->
+close State<details>
+				OPen state<summary>Section Heading</summary>
+					This is an example of using &lt;details &gt; and &lt;summary&gt;
+					to creat collpasible content without using Javascript.
+		  </details>
+
+<!-- 微数据 -->
+<div itemscope itemtype="http://data-vocabulary.org/Event">
+	<a href="http://example.com.event/1" itemprop="url">
+		<span itemprop="summary">臭殷鹏 ，哼！！！</span><br/>
+	</a>
+	<span itemprop="discription">快要上课了 好方！！！</span><br/>
+	Location:
+	<span itemprop="location" itemscope itemtype="http://data-vocabulary.org/Address">
+		<span itemprop="name">殷鹏</span><br/>
+		<span itemprop="age">10</span><br/>
+		<span itemprop="sex">felman</span>
+	</span>
+	Date Time:
+	<time itemprop="time" datetime="2017-04-18">Fri,May 4th @ 14pm</time>
+</div>
+</body>
+</html>

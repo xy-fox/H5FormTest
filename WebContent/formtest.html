@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Order Form</title>
+<script type="text/javascript" src="app.js"></script>
+<style type="text/css">
+	li {
+			list-style-type:none;
+	}
+	div{
+	    display: inline;
+	}
+    legend {
+    
+      font-weight: bold;
+    }
+</style>
+  
+</head>
+<body>
+	<form name="order" method="post" action="/submit" >
+		<h1>Order Form</h1>
+		<fieldset>                          <!-- fieldset:将表单的相关元素进行分组 -->
+
+		 	<legend>Contact Details</legend>
+		 	<ul >
+		 		<li> 
+		 			<label class="required"> <!-- required:强制用户输入 -->
+		 			<div>Full Name</div>	 <!-- autofocus:页面加载时自动获取焦点的输入元素  -->
+		 			<input name="name" required="required" autofocus="autofocus">
+		 			</label>
+		 		</li>
+		 		<li>
+		 			<label class="required">
+		 				<div>Email Address</div>
+		 				<input type="email" name="email" required="required" autofocus="autofocus">
+		 			</label>
+		 		</li>
+		 		
+		 		<li>
+		 			<label>
+		 				<div>Postal Address</div>
+		 				<input name="address1" placeholder="Address Line 1">  <!-- placeholder:占位符文本，当用户输入内容后，占位符文本被内容所代替 -->
+		 			</label>
+		 			<div>&nbsp;</div>
+		 			<input name="city" placeholder="Town/city">
+		 			<div>&nbsp;</div>
+		 			<input name="state" placeholder="state">
+		 			<div>&nbsp;</div>
+		 			<input name="zip" placeholder="Zip Code">
+		 			<div>&nbsp;</div>
+		 			<select name="country">
+		 				<option value="0">Country</option>
+		 				<option value="US">United States</option>
+		 				<option value="CA">Canada</option>
+		 			</select>
+		 		</li>
+		 		<li>
+		 			<label>
+		 				<div>Home Phone No.</div>
+		 				<input type="tel" name="homephone">
+		 			</label>
+		 		</li>
+		 		<li>
+		 			<label>
+		 				<div>Cell Phone No.</div>
+		 				<input type="tel" name="cellphone">
+		 			</label>
+		 		</li>
+		 		<li>
+		 			<label>
+		 				<div>Skype Name</div>
+		 				<input  name="skype">
+		 			</label>
+		 		</li>
+		 		<li>
+		 			<label>
+		 				<div>Twitter</div>
+		 				<span class="twitter_prefix">@</span>
+		 				<input name="twitter" class="tiwtter">
+		 			</label>
+		 		</li>
+		 	</ul>
+		 </fieldset>
+		 <fieldset>
+		 	<legend>Login Details</legend>
+		 	<ul >
+		 		<li style="float: left; margin-left: 20px" >
+		 			<label class="required">
+		 				<div>Password</div>
+		 				<input type="password" name="password" required="required">
+		 			</label>
+		 		</li>
+		 		<li>
+		 			<label class="required">
+		 				<div>Confirm password</div>
+		 				<input type="password" name="confirm_password" required="required">
+		 			</label>
+		 		</li>
+		 	</ul>
+		 </fieldset>
+		 <fieldset>
+		 	<legend>Order Details</legend>
+		 	<table border="1">
+		 		<thead>
+		 			<tr>
+		 				<th>Product Code</th>
+		 				<th>Description</th>
+		 				<th>Qty</th>
+		 				<th>Price</th>
+		 				<th>Total</th>
+		 			</tr>
+		 		</thead>
+		 		<tbody>
+		 			<tr>
+		 				<td>
+		 					COMP001
+		 					<input type="hidden" name="product_code" value="COMP001">
+		 				</td>
+		 				<td>The Ultimate Smartphone</td>
+		 				<td>
+		 					<input type="number" data-price="399.99" name="quantity" 
+		 					value="0" min="0" max="99" maxlength="2">
+		 				</td>
+		 				<td>$399.99</td>
+		 				<td>
+		 					<output name="item_total" class="item_total">$0.00</output>
+		 				</td>
+		 			</tr>
+		 			<tr>
+		 				<td>
+		 					COMP002
+		 					<input type="hidden" name="product_code" value="COMP002">
+		 				</td>
+		 				<td>The Ultimate Table</td>
+		 				<td>
+		 					<input type="number" data-price="499.99" name="quantity" 
+		 					value="0" min="0" max="99" maxlength="2">
+		 				</td>
+		 				<td>$499.99</td>
+		 				<td>
+		 					<output name="item_total" class="item_total">$0.00</output>
+		 				</td>
+		 			</tr>
+		 			<tr>
+		 				<td>
+		 					COMP003
+		 					<input type="hidden" name="product_code" value="COMP001">
+		 				</td>
+		 				<td>The Ultimate Netbook</td>
+		 				<td>
+		 					<input type="number" data-price="199.99" name="quantity" 
+		 					value="0" min="0" max="99" maxlength="2">
+		 				</td>
+		 				<td>$199.99</td>
+		 				<td>
+		 					<output name="item_total" class="item_total">$0.00</output>
+		 				</td>
+		 			</tr>
+		 		</tbody>
+		 		<tfoot>
+		 			<tr>
+		 				<td colspan="4">Order Total</td>
+		 				<td>
+		 					<output name="order_total" id="order_total">$0.00</output>
+		 				</td>
+		 			</tr>
+		 		</tfoot>
+		 	</table>
+		 </fieldset>
+		 <fieldset>
+		 	<legend>Payment Details</legend>
+		 	<ul>
+		 		<li>
+		 			<label class="required">
+		 				<div>Name on card</div>
+		 				<input name="card_name" required>
+		 			</label>
+		 		</li>
+		 		<li>
+		 			<label class="required">
+		 				<div>Credit Card No.</div>
+		 				<input name="card_name" required pattern="[0-9]{13,16}"   
+		 				title="13-16 digits,no spaces">    <!-- pattern:正则表达式，判断用户输入是否合法-->
+		 			</label>							<!-- title:当用户提交无效值时，title属性就会产生提示信息 -->
+		 		</li>
+		 		<li>
+		 			<label class="required">
+		 				<div>Expiry Date</div>
+		 				<input type="month" name="card_expiry" required maxlength="7"  
+		 				placeholder="YYYY-MM" value="2017-04">    
+		 			</label>							
+		 		</li>
+		 		<li>
+		 			<label class="required">
+		 				<div>CVV2 NO.</div>
+		 				<input name="card_cvv2" required maxlength="3" pattern="[0-9]{3}"  
+		 				placeholder="YYYY-MM" title="exactly 3 digits">
+		 				<span>(There digit code at back of card )</span>  
+		 			</label>							
+		 		</li>
+		 	</ul>
+		 </fieldset>
+		<div style="float: right;">
+			<input type="submit" value="Submit Order">
+			<input type="submit" value="Save Order" id="saveOrder">
+		</div>
+	</form>
+</body>
+</html>
